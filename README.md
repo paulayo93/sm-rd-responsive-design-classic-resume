@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c689f6b... setup base project structure
 <div align="center">
   <br />
   <br />
@@ -30,6 +33,7 @@
 <div align="center">
   <sub>Built with ❤︎ by <a href="https://github.com/bahdcoder">Kati Frantz</a>
 </div>
+<<<<<<< HEAD
 =======
 # Front-end Webpack Boilerplate
 
@@ -73,3 +77,5 @@ const localServer = {
 * _Images_ are located in `dist/images/`
 * _Fonts_ are located in `dist/fonts/`
 >>>>>>> d9b20bc... Initial commit.
+=======
+>>>>>>> c689f6b... setup base project structure

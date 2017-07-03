@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 node_modules
 yarn.lock
 =======
@@ -24,3 +25,7 @@ npm-debug.log
 node_modules/
 dist/
 >>>>>>> d9b20bc... Initial commit.
+=======
+node_modules
+yarn.lock
+>>>>>>> c689f6b... setup base project structure
