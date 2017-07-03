@@ -1,3 +1,18 @@
-body {
-  background-color: #00a0d2;
-}
+
+
+/* Core variables */
+@import 'base/vars';
+
+/* CSS Reset */
+@import 'base/reset';
+
+
+/* Fonts */
+@import 'base/fonts';
+
+/* Mixins, helpers and functions */
+@import 'base/mixins';
+
+
+/* Demo Page styles */
+@import 'demo';
