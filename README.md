@@ -7,6 +7,11 @@
 <br />
 <br />
 
+<div>
+<h1>Use BEM to define the structure CSS and variable declaration</h1>
+<p>block__element--modifier</p>
+</div>
+
 <div align="center">
   <h3>
     <strong>
