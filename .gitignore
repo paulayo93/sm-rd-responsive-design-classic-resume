@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 node_modules
 yarn.lock
+<<<<<<< HEAD
 =======
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
@@ -29,3 +30,6 @@ dist/
 node_modules
 yarn.lock
 >>>>>>> c689f6b... setup base project structure
+=======
+nbproject/
+>>>>>>> b6aae93... build design layout
