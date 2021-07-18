@@ -1,36 +1,44 @@
-<div align="center">
-  <br />
-  <br />
-  <img src="https://res.cloudinary.com/bahdcoder/image/upload/v1616511796/Software_mentor_logo_1_1_1_xutgsi.png" width="450px">
-</div>
 
-<br />
-<br />
+# Responsive Web Design
 
-<div>
-<h1>Use BEM to define the structure CSS and variable declaration</h1>
-<p>block__element--modifier</p>
-</div>
 
-<div align="center">
-  <h3>
-    <strong>
-    Upgrade your software skills with practical real-world projects
-    </strong>
-  </h3>
-  <p>The fastest and most effective way to master in-demand skills for your career 🚀. </p>
-</div>
+## Setup Font
 
-<br />
+The What, The why, The How, 
 
-<div align="center">
-  <h3>
-    <a href="https://softwarementor.io">
-      Website
-    </a>
-  </h3>
-</div>
 
-<div align="center">
-  <sub>Built with ❤︎ by <a href="https://github.com/bahdcoder">Kati Frantz</a>
-</div>
+```css
+
+
+@font-face {
+    font-family: 'Poppins';
+    src: url("../fonts/Poppins-Regular.eot?") format("eot"),
+    url("../fonts/Poppins-Regular.woff") format("woff"), 
+    url("../fonts/Poppins-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+
+
+  @font-face {
+    font-family: 'Poppins';
+    src: url("../fonts/Poppins-Bold.eot?") format("eot"),
+    url("../fonts/Poppins-Bold.woff") format("woff"), 
+    url("../fonts/Poppins-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  
+
+  @font-face {
+    font-family: 'Poppins';
+    src: url("../fonts/Poppins-Black.eot?") format("eot"),
+    url("../fonts/Poppins-Black.woff") format("woff"), 
+    url("../fonts/Poppins-Black.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 900;
+  }
+
+```
