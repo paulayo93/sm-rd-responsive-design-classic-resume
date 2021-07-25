@@ -1,5 +1,7 @@
 
-
+body {
+  font-family: Poppins;
+}
 
 /* Core variables */
 @import 'base/layout';
@@ -16,7 +18,7 @@
 @import 'base/fonts';
 
 /* Mixins, helpers and functions */
-@import 'base/mixins';
+//@import 'base/mixins';
 
 
 /* Demo Page styles */
