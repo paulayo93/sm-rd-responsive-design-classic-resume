@@ -32,4 +32,8 @@ yarn.lock
 >>>>>>> c689f6b... setup base project structure
 =======
 nbproject/
+<<<<<<< HEAD
 >>>>>>> b6aae93... build design layout
+=======
+.idea/
+>>>>>>> ddd343b... ignore file
