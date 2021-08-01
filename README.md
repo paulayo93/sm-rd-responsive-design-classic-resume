@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> c689f6b... setup base project structure
 <div align="center">
@@ -131,3 +132,5 @@ The What, The why, The How,
 
 ```
 >>>>>>> 6c81339... setup font-face
+=======
+>>>>>>> 8939458... Basic Font  Setup

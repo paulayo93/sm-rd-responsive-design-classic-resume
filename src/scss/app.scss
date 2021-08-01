@@ -1,18 +1,9 @@
 
-body {
-  font-family: Poppins;
-}
-
-/* Core variables */
-@import 'base/layout';
-
-
 /* Core variables */
 @import 'base/vars';
 
 /* CSS Reset */
 @import 'base/reset';
-
 
 /* Fonts */
 @import 'base/fonts';
@@ -20,6 +11,29 @@ body {
 /* Mixins, helpers and functions */
 //@import 'base/mixins';
 
+body {
+  font-family: PTSansNarrow;
+  font-weight: 400;
+}
 
-/* Demo Page styles */
-@import 'demo';
+.layout {
+  padding: 4px 15px 4px 15px;
+}
+
+.playFair__900 {
+  font-family: PlayFairDisplay;
+  font-weight: 900;
+  //font-size: 52px;
+}
+
+.ptSansNarrow__700 {
+  font-family: PTSansNarrow;
+  font-weight: 700;
+  //font-size: 28px;
+}
+
+.ptSansNarrow__400 {
+  font-family: PTSansNarrow;
+  font-weight: 400;
+  //font-size: 16px;
+}

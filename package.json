@@ -1,23 +1,13 @@
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
   "name": "sm-rd-responsive-design-classic-resume",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/paulayo93/sm-rd-responsive-design-classic-resume.git",
-  "author": "Paul Ayo Oloyede <ayopaulofficial@gmail.com>",
-  "license": "MIT"
-=======
-  "name": "ProjectName",
-=======
-  "target": "web",
-  "name": "sm-rd-responsive-design-classic-resume",
->>>>>>> c689f6b... setup base project structure
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/paulayo93/sm-rd-responsive-design-classic-resume.git",
-  "author": "Paul Ayo Oloyede <ayopaulofficial@gmail.com>",
+  "author": "Paul Oloyede <ayopaulofficial@gmail.com>",
   "license": "MIT",
+  "target": "web",
+
   "browserslist": [
     "last 2 versions",
     "> 5%"
@@ -74,5 +64,4 @@
   "dependencies": {
     "normalize.css": "^8.0.1"
   }
->>>>>>> d9b20bc... Initial commit.
 }

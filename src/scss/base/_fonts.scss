@@ -2,34 +2,33 @@
  * Fonts
 */
 
-
-@font-face {
-    font-family: 'Poppins';
-    src: url("../fonts/poppins/Poppins-Regular.eot?") format("eot"),
-    url("../fonts/poppins/Poppins-Regular.woff") format("woff"),
-    url("../fonts/poppins/Poppins-Regular.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 400;
-  }
-
-
-
+//Playfair fonts
   @font-face {
-    font-family: 'Poppins';
-    src: url("../fonts/poppins/Poppins-Bold.eot?") format("eot"),
-    url("../fonts/poppins/Poppins-Bold.woff") format("woff"),
-    url("../fonts/poppins/Poppins-Bold.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 700;
-  }
-
-
-
-  @font-face {
-    font-family: 'Poppins';
-    src: url("../fonts/poppins/Poppins-Black.eot?") format("eot"),
-    url("../fonts/poppins/Poppins-Black.woff") format("woff"),
-    url("../fonts/poppins/Poppins-Black.ttf") format("truetype");
+    font-family: 'PlayFairDisplay';
+    src: url("../fonts/playfairDisplay/PlayfairDisplay-Black.eot?") format("eot"),
+    url("../fonts/playfairDisplay/PlayfairDisplay-Black.woff") format("woff"),
+    url("../fonts/playfairDisplay/PlayfairDisplay-Black.ttf") format("truetype");
     font-style: normal;
     font-weight: 900;
   }
+
+
+//PTSansNarrow fonts
+
+@font-face {
+  font-family: 'PTSansNarrow';
+  src: url("../fonts/ptSansNarrow/PTSansNarrow-Regular.eot?") format("eot"),
+  url("../fonts/ptSansNarrow/PTSansNarrow-Regular.woff") format("woff"),
+  url("../fonts/ptSansNarrow/PTSansNarrow-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'PTSansNarrow';
+  src: url("../fonts/ptSansNarrow/PTSansNarrow-Bold.eot?") format("eot"),
+  url("../fonts/ptSansNarrow/PTSansNarrow-Bold.woff") format("woff"),
+  url("../fonts/ptSansNarrow/PTSansNarrow-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
