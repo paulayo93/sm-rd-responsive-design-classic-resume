@@ -37,3 +37,19 @@ body {
   font-weight: 400;
   //font-size: 16px;
 }
+
+$primary-color : #0699A6;
+$secondary-color : #9E8C6C;
+$text :  #000000;
+
+
+.section--layout__primary {
+  .primary--default {
+    display: block;
+    width: 60px;
+    height: 70px;
+    background-color: $primary-color;
+
+  }
+}
+
