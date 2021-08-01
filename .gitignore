@@ -1,39 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 node_modules
 yarn.lock
-<<<<<<< HEAD
-=======
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
-# Mac OS X
-.DS_Store
-._.*
-._*
-
-# Ignore local editor
-.project
-.settings
-.idea
-*.swp
-tags
-nbproject/*
-
-# Windows
-Thumbs.db
-
-npm-debug.log
-node_modules/
-dist/
->>>>>>> d9b20bc... Initial commit.
-=======
-node_modules
-yarn.lock
->>>>>>> c689f6b... setup base project structure
-=======
-nbproject/
-<<<<<<< HEAD
->>>>>>> b6aae93... build design layout
-=======
 .idea/
->>>>>>> ddd343b... ignore file
