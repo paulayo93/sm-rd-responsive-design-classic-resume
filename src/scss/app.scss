@@ -1,3 +1,4 @@
+@use 'sass:map';
 
 /* Core variables */
 @import 'base/vars';
@@ -38,18 +39,73 @@ body {
   //font-size: 16px;
 }
 
-$primary-color : #0699A6;
+$color-primary: #0699A6 !default;
+
 $secondary-color : #9E8C6C;
-$text :  #000000;
+$text-color:  #000000;
+
+$dark-primary-text: rgba(black, 0.87);
+$dark-secondary-text: rgba(black, 0.54);
+$dark-disabled-text: rgba(black, 0.38);
+$dark-dividers: rgba(black, 0.12);
+$dark-focused: rgba(black, 0.12);
+$light-primary-text: white;
+$light-secondary-text: rgba(white, 0.7);
+$light-disabled-text: rgba(white, 0.5);
+$light-dividers: rgba(white, 0.12);
+$light-focused: rgba(white, 0.12);
 
 
-.section--layout__primary {
-  .primary--default {
-    display: block;
-    width: 60px;
-    height: 70px;
-    background-color: $primary-color;
+$bondi-blue: (
+        dark: (
+                50: #000000,
+                100: #000F10,
+                200: #011E21,
+                300: #012D31,
+                400: #023D42,
+                500: #035B63,
+                600: #046B74,
+                700: #047A84,
+                800: #058995,
+                900: #0699a6,
+        ),
 
+        light: (
+                50: #0699a6,
+                100: #1EA3AE,
+                200: #37ADB7,
+                300: #50B7C0,
+                400: #69C1C9,
+                500: #82CBD2,
+                600: #9BD6DB,
+                700: #B4E0E4,
+                800: #CDEAED,
+                900: #E6F4F6,
+)
+);
+
+@mixin primary-light-color($number, $color) {
+  .primary-color-#{$number} {
+    background-color: #{$color};
   }
 }
 
+@include primary-light-color(50, map.get($bondi-blue,"light", 50 ));
+@include primary-light-color(100, map.get($bondi-blue,"light", 100 ));
+@include primary-light-color(200, map.get($bondi-blue,"light", 200 ));
+@include primary-light-color(300, map.get($bondi-blue,"light", 300 ));
+@include primary-light-color(400, map.get($bondi-blue,"light", 400 ));
+@include primary-light-color(500, map.get($bondi-blue,"light", 500 ));
+@include primary-light-color(600, map.get($bondi-blue,"light", 600 ));
+@include primary-light-color(900, map.get($bondi-blue,"light", 900 ));
+
+
+
+
+.section--layout__primary {
+  .item-layout{
+    display: inline-block;
+    width: 60px;
+    height: 70px;
+  }
+}
