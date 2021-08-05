@@ -40,72 +40,82 @@ body {
 }
 
 $color-primary: #0699A6 !default;
-
-$secondary-color : #9E8C6C;
-$text-color:  #000000;
-
-$dark-primary-text: rgba(black, 0.87);
-$dark-secondary-text: rgba(black, 0.54);
-$dark-disabled-text: rgba(black, 0.38);
-$dark-dividers: rgba(black, 0.12);
-$dark-focused: rgba(black, 0.12);
-$light-primary-text: white;
-$light-secondary-text: rgba(white, 0.7);
-$light-disabled-text: rgba(white, 0.5);
-$light-dividers: rgba(white, 0.12);
-$light-focused: rgba(white, 0.12);
+$secondary-color: #9E8C6C !default;
+$black: #000 !default;
+$white: #fff !default;
+$text-color: $black;
 
 
 $bondi-blue: (
-        dark: (
-                50: #000000,
-                100: #000F10,
-                200: #011E21,
-                300: #012D31,
-                400: #023D42,
-                500: #035B63,
-                600: #046B74,
-                700: #047A84,
-                800: #058995,
-                900: #0699a6,
-        ),
-
-        light: (
-                50: #0699a6,
-                100: #1EA3AE,
-                200: #37ADB7,
-                300: #50B7C0,
-                400: #69C1C9,
-                500: #82CBD2,
-                600: #9BD6DB,
-                700: #B4E0E4,
-                800: #CDEAED,
-                900: #E6F4F6,
-)
+        50: #000F10,
+        100: #011E21,
+        200: #023D42,
+        300: #035B63,
+        400: #047A84,
+        500: #0699a6,
+        600: #37ADB7,
+        700: #69C1C9,
+        800: #9BD6DB,
+        900: #CDEAED,
 );
 
-@mixin primary-light-color($number, $color) {
+$donkey-brown: (
+        50: #4F4636,
+        100: #5E5440,
+        200: #6E624B,
+        300: #7E7056,
+        400: #8E7E61,
+        500: #9e8c6c,
+        600: #A7977A,
+        700: #B1A389,
+        800: #BBAE98,
+        900: #C4BAA6,
+);
+
+
+@mixin primary-color($number, $color) {
   .primary-color-#{$number} {
     background-color: #{$color};
   }
 }
 
-@include primary-light-color(50, map.get($bondi-blue,"light", 50 ));
-@include primary-light-color(100, map.get($bondi-blue,"light", 100 ));
-@include primary-light-color(200, map.get($bondi-blue,"light", 200 ));
-@include primary-light-color(300, map.get($bondi-blue,"light", 300 ));
-@include primary-light-color(400, map.get($bondi-blue,"light", 400 ));
-@include primary-light-color(500, map.get($bondi-blue,"light", 500 ));
-@include primary-light-color(600, map.get($bondi-blue,"light", 600 ));
-@include primary-light-color(900, map.get($bondi-blue,"light", 900 ));
+@mixin accent-color($number, $color) {
+  .accent-color-#{$number} {
+    background-color: #{$color};
+  }
+}
+
+@include primary-color(50, map.get($bondi-blue,  50));
+@include primary-color(100, map.get($bondi-blue, 100));
+@include primary-color(200, map.get($bondi-blue, 200));
+@include primary-color(300, map.get($bondi-blue, 300));
+@include primary-color(400, map.get($bondi-blue,  400));
+@include primary-color(500, map.get($bondi-blue, 500));
+@include primary-color(600, map.get($bondi-blue,  600));
+@include primary-color(900, map.get($bondi-blue,  900));
+
+@include accent-color(50, map.get($donkey-brown, 50));
+@include accent-color(100, map.get($donkey-brown, 100));
+@include accent-color(200, map.get($donkey-brown, 200));
+@include accent-color(300, map.get($donkey-brown, 300));
+@include accent-color(400, map.get($donkey-brown, 400));
+@include accent-color(500, map.get($donkey-brown, 500));
+@include accent-color(600, map.get($donkey-brown, 600));
+@include accent-color(900, map.get($donkey-brown, 900));
 
 
+.section--layout {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 
-
-.section--layout__primary {
-  .item-layout{
-    display: inline-block;
-    width: 60px;
-    height: 70px;
+  .item-layout {
+    flex: 1 1 20%;  // grow shrink basis
+    align-self: baseline;
+    height: 100px;
+    border-radius: 6.66666666rem;
+    border: none;
+    margin: 30px 10px;
   }
 }
