@@ -12,9 +12,14 @@
 /* Mixins, helpers and functions */
 //@import 'base/mixins';
 
+html {
+  font-size: 16px;
+}
+
 body {
-  font-family: PTSansNarrow;
+  font-family: PTSansNarrow, serif;
   font-weight: 400;
+  font-size: 16px;
 }
 
 .layout {
@@ -85,14 +90,14 @@ $donkey-brown: (
   }
 }
 
-@include primary-color(50, map.get($bondi-blue,  50));
+@include primary-color(50, map.get($bondi-blue, 50));
 @include primary-color(100, map.get($bondi-blue, 100));
 @include primary-color(200, map.get($bondi-blue, 200));
 @include primary-color(300, map.get($bondi-blue, 300));
-@include primary-color(400, map.get($bondi-blue,  400));
+@include primary-color(400, map.get($bondi-blue, 400));
 @include primary-color(500, map.get($bondi-blue, 500));
-@include primary-color(600, map.get($bondi-blue,  600));
-@include primary-color(900, map.get($bondi-blue,  900));
+@include primary-color(600, map.get($bondi-blue, 600));
+@include primary-color(900, map.get($bondi-blue, 900));
 
 @include accent-color(50, map.get($donkey-brown, 50));
 @include accent-color(100, map.get($donkey-brown, 100));
@@ -111,11 +116,90 @@ $donkey-brown: (
   flex-wrap: wrap;
 
   .item-layout {
-    flex: 1 1 20%;  // grow shrink basis
+    flex: 1 1 20%; // grow shrink basis
     align-self: baseline;
     height: 100px;
     border-radius: 6.66666666rem;
     border: none;
     margin: 30px 10px;
+  }
+}
+
+// header section
+.header-container {
+  height: 35rem;
+  position: relative;
+
+  &:after {
+    background-color: rgba(158, 140, 108, 0.1);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    -webkit-backface-visibility: hidden; // for Chrome Windows
+  }
+
+  &:after {
+    bottom: 0;
+    transform: skewY(-4.5deg);
+    transform-origin: 0 100%;
+  }
+}
+
+
+.profile {
+  padding-top: .1rem;
+  position: relative;
+  outline: 1px solid red;
+  $border-radius: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-content: center;
+
+  &-img {
+
+    background-color: #4F4636;
+    opacity: 0.2;
+    border-radius: $border-radius;
+    -webkit-border-radius: $border-radius;
+    width: 10rem;
+    height: 10rem;
+    position: relative;
+    right: 0;
+    left: 7rem;
+    top: 4rem;
+    bottom: 0;
+
+    &--skeleton {
+
+    }
+  }
+}
+
+.breadcrumb {
+  width: 100%;
+  $spacing-top: 20em;
+
+  &-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-content: baseline;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    background-color: transparent;
+    font-weight: 700;
+
+    &--item {
+      color: map.get($donkey-brown, 500);
+      line-height: 1rem;
+      letter-spacing: .2rem;
+
+    }
   }
 }
