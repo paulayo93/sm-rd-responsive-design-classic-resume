@@ -16,6 +16,18 @@ html {
   font-size: 16px;
 }
 
+@media (max-width: 900px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 12px;
+  }
+}
+
 body {
   font-family: PTSansNarrow, serif;
   font-weight: 400;
@@ -29,7 +41,7 @@ body {
 .playFair__900 {
   font-family: PlayFairDisplay;
   font-weight: 900;
-  //font-size: 52px;
+  font-size: 56px;
 }
 
 .ptSansNarrow__700 {
@@ -127,7 +139,7 @@ $donkey-brown: (
 
 // header section
 .header-container {
-  height: 35rem;
+  height: 48rem;
   position: relative;
 
   &:after {
@@ -150,56 +162,73 @@ $donkey-brown: (
 
 
 .profile {
-  padding-top: .1rem;
   position: relative;
-  outline: 1px solid red;
+  padding-top: 5rem;
+  //outline: 1px solid red;
   $border-radius: 60%;
-  height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-content: center;
+  justify-content: center;
+
 
   &-img {
-
+    //outline: 1px solid red;
     background-color: #4F4636;
     opacity: 0.2;
     border-radius: $border-radius;
     -webkit-border-radius: $border-radius;
-    width: 10rem;
-    height: 10rem;
     position: relative;
-    right: 0;
-    left: 7rem;
-    top: 4rem;
-    bottom: 0;
-
-    &--skeleton {
-
-    }
+    height: 10rem;
+    width: 10rem;
   }
 }
 
 .breadcrumb {
   width: 100%;
-  $spacing-top: 20em;
+  $spacing-top: .7555em;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: baseline;
+  //outline: 1px solid red;
+  font-size: 16px;
+  margin-top: $spacing-top;
+
+  %slash:nth-child(1):after {
+    padding: 8px;
+    content: "/\00a0";
+  }
 
   &-list {
     list-style: none;
     display: flex;
     justify-content: center;
     align-content: baseline;
-    text-align: center;
-    font-size: 14px;
+    align-items: baseline;
     text-transform: uppercase;
     background-color: transparent;
     font-weight: 700;
+    width: 100%;
+    padding-right: 1em;
 
     &--item {
       color: map.get($donkey-brown, 500);
       line-height: 1rem;
-      letter-spacing: .2rem;
+      letter-spacing: .19999rem;
+      @extend %slash;
 
     }
+  }
+}
+
+.title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: -30px;
+
+  &--item {
+    text-align: center;
+    line-height:  .8846em;
+    letter-spacing: -2.17px;
   }
 }
