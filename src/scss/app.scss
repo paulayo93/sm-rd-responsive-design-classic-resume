@@ -31,7 +31,7 @@ html {
 body {
   font-family: PTSansNarrow, serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .layout {
@@ -44,17 +44,20 @@ body {
   font-size: 56px;
 }
 
-.ptSansNarrow__700 {
-  font-family: PTSansNarrow;
-  font-weight: 700;
-  //font-size: 28px;
+.ptSansNarrow {
+  font-size: 18px;
+  &__400 {
+    font-family: PTSansNarrow;
+    font-weight: 400;
+
+  }
+
+  &__700 {
+    font-family: PTSansNarrow;
+    font-weight: 700;
+  }
 }
 
-.ptSansNarrow__400 {
-  font-family: PTSansNarrow;
-  font-weight: 400;
-  //font-size: 16px;
-}
 
 $color-primary: #0699A6 !default;
 $secondary-color: #9E8C6C !default;
@@ -230,5 +233,29 @@ $donkey-brown: (
     text-align: center;
     line-height:  .8846em;
     letter-spacing: -2.17px;
+  }
+}
+
+.action {
+  display: flex;
+  justify-content: center;
+  align-content: baseline;
+
+  &--btn {
+    display: inline-flex;
+    white-space: nowrap;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1rem;
+    letter-spacing: .19999rem;
+    text-transform: uppercase;
+    color: $white;
+    background-color: map.get($bondi-blue, 500);
+    position: relative;
+    top: -2rem;
+    border-radius: .0009rem;
+    box-shadow: none;
+    border: none;
+    padding: 1.455rem 1.88rem 1.6rem 1.88rem;
   }
 }
