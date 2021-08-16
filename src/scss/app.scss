@@ -12,8 +12,26 @@
 /* Mixins, helpers and functions */
 //@import 'base/mixins';
 
+$font-size-xs: 14px;
+$font-size-sm: 18px;
+$font-size-md: 32px;
+$font-size-lg: 52px;
+
+//S, XS, L, XL and — if necessary — XXS and XXL
+
+$space-unit: 1em;
+$space-xxs: calc(0.25 * #{$space-unit});
+$space-xs: calc(0.5 * #{$space-unit});
+$space-sm: calc(0.75 * #{$space-unit});
+$space-md: calc(1.25 * #{$space-unit});
+$space-lg: calc(2 * #{$space-unit});
+$space-xl: calc(3.25 * #{$space-unit});
+$space-xxl: calc(5.25 * #{$space-unit});
+
+$padding-top: $space-sm;
+
 html {
-  font-size: 16px;
+  font-size: $font-size-sm;
 }
 
 @media (max-width: 900px) {
@@ -28,10 +46,17 @@ html {
   }
 }
 
-body {
+body, * {
   font-family: PTSansNarrow, serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: $font-size-sm;
+  box-sizing: border-box;
+  color: $black;
+}
+
+h5, h6, h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
 }
 
 .layout {
@@ -41,15 +66,12 @@ body {
 .playFair__900 {
   font-family: PlayFairDisplay;
   font-weight: 900;
-  font-size: 56px;
 }
 
 .ptSansNarrow {
-  font-size: 18px;
   &__400 {
     font-family: PTSansNarrow;
     font-weight: 400;
-
   }
 
   &__700 {
@@ -142,7 +164,7 @@ $donkey-brown: (
 
 // header section
 .header-container {
-  height: 48rem;
+  height: 40rem;
   position: relative;
 
   &:after {
@@ -167,14 +189,12 @@ $donkey-brown: (
 .profile {
   position: relative;
   padding-top: 5rem;
-  //outline: 1px solid red;
   $border-radius: 60%;
   display: flex;
   justify-content: center;
 
 
   &-img {
-    //outline: 1px solid red;
     background-color: #4F4636;
     opacity: 0.2;
     border-radius: $border-radius;
@@ -192,8 +212,7 @@ $donkey-brown: (
   display: flex;
   justify-content: center;
   align-content: baseline;
-  //outline: 1px solid red;
-  font-size: 16px;
+  font-size: $font-size-xs;
   margin-top: $spacing-top;
 
   %slash:nth-child(1):after {
@@ -227,12 +246,21 @@ $donkey-brown: (
   position: relative;
   display: flex;
   justify-content: center;
-  top: -30px;
+  margin-top: $space-xs;
 
-  &--item {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    line-height:  .8846em;
+    line-height: .8846em;
     letter-spacing: -2.17px;
+    font-size: $font-size-lg;
+
+    .word-break {
+      padding: 1px 8px;
+      font-size: inherit;
+    }
   }
 }
 
@@ -240,6 +268,7 @@ $donkey-brown: (
   display: flex;
   justify-content: center;
   align-content: baseline;
+  margin-top: $space-xl;
 
   &--btn {
     display: inline-flex;
@@ -256,6 +285,83 @@ $donkey-brown: (
     border-radius: .0009rem;
     box-shadow: none;
     border: none;
-    padding: 1.455rem 1.88rem 1.6rem 1.88rem;
+    padding: 1.455rem 4rem 1.6rem 4rem;
+  }
+}
+
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-top: $space-lg;
+  padding-left: $padding-top;
+  padding-right: $padding-top;
+
+  &__title {
+    font-size: $font-size-md;
+    margin: 0;
+  }
+
+  &__lead {
+    line-height: 1.7em;
+    margin-top: 10px;
+    color: $black;
+  }
+}
+
+.divider {
+  width: 4.333rem;
+  height: .97737rem;
+  background-color: map.get($bondi-blue, 500);
+  position: relative;
+  margin: $space-lg 0 0 15px;
+  padding-left: $padding-top;
+  border: none;
+}
+
+.header {
+  display: inline-block;
+  font-size: $font-size-md;
+  margin-top: $space-md;
+  text-align: start;
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+
+  &__role {
+    text-transform: uppercase;
+    color: map.get($donkey-brown, 500);
+    margin-top: $space-lg;
+    letter-spacing: 1px;
+    line-height: 1.7rem;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+
+    .sep {
+      height: .1555em;
+      width: .144em;
+      background-color: map.get($donkey-brown, 500);
+      display: inline-flex;
+      padding-left: $space-xs;
+      padding-right: $space-xs;
+      margin-bottom: 3px;
+      margin-left: 3px;
+      margin-right: 3px;
+      border: none;
+    }
+  }
+
+  &__date {
+    margin-top: $space-xs;
+    line-height: 2em;
+  }
+
+  &__lead {
+    margin-top: $space-xs;
+    line-height: 1.7em;
   }
 }
