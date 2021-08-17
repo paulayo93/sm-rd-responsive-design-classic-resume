@@ -54,7 +54,7 @@ body, * {
   color: $black;
 }
 
-h5, h6, h1, h2, h3, h4, p {
+h5, h6, h1, h2, h3, h4, p, ul {
   margin: 0;
   padding: 0;
 }
@@ -86,6 +86,8 @@ $secondary-color: #9E8C6C !default;
 $black: #000 !default;
 $white: #fff !default;
 $text-color: $black;
+
+
 
 
 $bondi-blue: (
@@ -312,7 +314,7 @@ $donkey-brown: (
 
 .divider {
   width: 4.333rem;
-  height: .97737rem;
+  height: .57737rem;
   background-color: map.get($bondi-blue, 500);
   position: relative;
   margin: $space-lg 0 0 15px;
@@ -337,22 +339,8 @@ $donkey-brown: (
     margin-top: $space-lg;
     letter-spacing: 1px;
     line-height: 1.7rem;
-    word-break: keep-all;
     white-space: nowrap;
     overflow: hidden;
-
-    .sep {
-      height: .1555em;
-      width: .144em;
-      background-color: map.get($donkey-brown, 500);
-      display: inline-flex;
-      padding-left: $space-xs;
-      padding-right: $space-xs;
-      margin-bottom: 3px;
-      margin-left: 3px;
-      margin-right: 3px;
-      border: none;
-    }
   }
 
   &__date {
@@ -364,4 +352,61 @@ $donkey-brown: (
     margin-top: $space-xs;
     line-height: 1.7em;
   }
+}
+.sep {
+  height: .1555em;
+  width: .144em;
+  background-color: map.get($donkey-brown, 500);
+  display: inline-flex;
+  padding-left: $space-xs;
+  padding-right: $space-xs;
+  margin-bottom: 3px;
+  margin-left: 3px;
+  margin-right: 3px;
+  border: none;
+}
+
+.no-word--wrap {
+  white-space: normal;
+}
+
+.title--small {
+  letter-spacing: 1px;
+  line-height: 1.7rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.text--uppercase {
+  text-transform: uppercase;
+}
+.primary-color {
+  color: $black;
+}
+.secondary-color {
+  color: map.get($donkey-brown, 500);
+}
+
+.margin-top__lg {
+  margin-top: $space-lg;
+}
+.margin-top__xs {
+  margin-top: $space-xs;
+}
+ul > li {
+  list-style: none;
+  line-height: $space-lg;
+}
+.line-height__lg {
+  line-height: $space-lg;
+}
+.line-height__md {
+  line-height: $space-md;
+}
+ul.item--spacing__md > li:not(:nth-child(1)) {
+  margin-top: $space-md;
+}
+a {
+  color: map.get($bondi-blue, 500);
+  font-weight: bold;
+  text-decoration: none;
 }
