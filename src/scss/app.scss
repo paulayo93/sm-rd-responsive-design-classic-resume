@@ -440,7 +440,7 @@ $donkey-brown: (
 
 .skill-list {
   & > li {
-    @media screen and (min-width: $breakpoint-tablet) {
+    @media only screen and (min-width: 576px) and (max-width: 992px) {
       font-size: 20px;
     }
   }
@@ -448,21 +448,32 @@ $donkey-brown: (
 
 .award-list {
   & > li {
-    @media screen and (min-width: $breakpoint-tablet) {
+    @media only screen and (min-width: 576px) and (max-width: 992px) {
       font-size: 20px;
     }
   }
 }
 .trait-list {
-  & > li p, & > span {
-    font-size: 20px;
+  @media only screen and (min-width: 576px) and (max-width: 992px) {
+    & > li p, & > span {
+      font-size: 20px;
+    }
   }
+
 }
 
 .project-list {
-  & > li a {
-    font-size: 20px;
+  @media only screen and (min-width: 576px) and (max-width: 992px) {
+    & > li p, & > span {
+      font-size: 20px;
+    }
+    & > li a {
+      font-size: 20px;
+    }
+
   }
+
+
 }
 .title--small {
   letter-spacing: 1px;
