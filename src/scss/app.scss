@@ -16,8 +16,9 @@ $font-size-xs: 14px;
 $font-size-sm: 18px;
 $font-size-md: 32px;
 $font-size-lg: 52px;
-
+$font-size-xl: 86px;
 $font-size-26: 26px;
+
 
 //S, XS, L, XL and — if necessary — XXS and XXL
 
@@ -30,10 +31,20 @@ $space-lg: calc(2 * #{$space-unit});
 $space-xl: calc(3.25 * #{$space-unit});
 $space-xxl: calc(5.25 * #{$space-unit});
 
-$padding-top: $space-sm;
+$border-radius: 60%;
+
+$breakpoint-tablet: 768px;
+
+@media (min-width: $breakpoint-tablet) {
+
+}
 
 html {
+  box-sizing: border-box;
   font-size: $font-size-sm;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 @media (max-width: 900px) {
@@ -69,6 +80,11 @@ h5, h6, h1, h2, h3, h4, p, ul {
 
 .layout {
   padding: 4px 15px 4px 15px;
+
+  @media only screen and (min-width: 576px) and (max-width: 992px) {
+    padding-left: $space-xxl;
+    padding-right: $space-xxl;
+  }
 }
 
 .playFair__900 {
@@ -197,15 +213,14 @@ $donkey-brown: (
   @include angled-edges;
 }
 
-.profile {
-  position: relative;
-  padding-top: 5rem;
-  $border-radius: 60%;
-  display: flex;
-  justify-content: center;
+  .profile {
+    position: relative;
+    padding-top: 5rem;
+    display: flex;
+    justify-content: center;
+  }
 
-
-  &-img {
+  .img--circle {
     background-color: #4F4636;
     opacity: 0.2;
     border-radius: $border-radius;
@@ -214,8 +229,27 @@ $donkey-brown: (
     height: 10rem;
     width: 10rem;
   }
+
+//responsiveness for the header
+@media only screen and (min-width: 576px) and (max-width: 992px) {
+
+  .header-container {
+    height: 57rem;
+  }
+  .profile {
+    padding-top: 6rem;
+    padding-left: $space-md;
+  }
+  .img--circle {
+    height: 15rem;
+    width: 15rem;
+  }
 }
 
+%forward-slash:nth-child(1):after {
+  padding: 8px;
+  content: "/\00a0";
+}
 .breadcrumb {
   width: 100%;
   position: relative;
@@ -223,10 +257,6 @@ $donkey-brown: (
   justify-content: center;
   align-content: baseline;
 
-  %slash:nth-child(1):after {
-    padding: 8px;
-    content: "/\00a0";
-  }
 
   &-list {
     list-style: none;
@@ -239,14 +269,20 @@ $donkey-brown: (
     width: 100%;
 
     &--item {
+      @extend %forward-slash;
       color: map.get($donkey-brown, 500);
       line-height: 1rem;
       letter-spacing: .19999rem;
-      @extend %slash;
+      font-size: $font-size-xs;
+      @media only screen and (min-width: 576px) and (max-width: 992px) {
+        font-size: $font-size-sm;
+      }
+
 
     }
   }
 }
+
 
 @mixin title--lg {
   display: flex;
@@ -257,6 +293,10 @@ $donkey-brown: (
   letter-spacing: -2.17px;
   font-size: $font-size-lg;
   @content;
+  @media only screen and (min-width: 576px) and (max-width: 992px) {
+    font-size: $font-size-xl;
+  }
+
 }
 
 .title {
@@ -274,6 +314,8 @@ $donkey-brown: (
     }
   }
 }
+
+
 
 .action {
   display: flex;
@@ -296,7 +338,7 @@ $donkey-brown: (
     border-radius: .0009rem;
     box-shadow: none;
     border: none;
-    padding: 1.455rem 4rem 1.6rem 4rem;
+    padding: 1.455rem 4rem 1.6rem;
   }
 }
 
@@ -305,8 +347,13 @@ $donkey-brown: (
   flex-direction: column;
   align-content: center;
   margin-top: $space-lg;
-  padding-left: $padding-top;
-  padding-right: $padding-top;
+  padding-left: $space-sm;
+  padding-right: $space-sm;
+
+  @media only screen and (min-width: 576px) and (max-width: 992px) {
+    padding-right: $space-xxl;
+    padding-left: $space-xxl;
+  }
 
   &__title {
     font-size: $font-size-md;
@@ -317,6 +364,10 @@ $donkey-brown: (
     line-height: 1.7em;
     margin-top: 10px;
     color: $black;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      font-size: 20px;
+    }
   }
 }
 
@@ -326,8 +377,12 @@ $donkey-brown: (
   background-color: map.get($bondi-blue, 500);
   position: relative;
   margin: $space-lg 0 0 15px;
-  padding-left: $padding-top;
+  padding-left: $space-sm;
   border: none;
+
+  @media only screen and (min-width: 576px) and (max-width: 992px) {
+    margin-left: $space-xxl;
+  }
 }
 
 .header {
@@ -336,6 +391,7 @@ $donkey-brown: (
   margin-top: $space-md;
   text-align: start;
 }
+
 
 .work {
   display: flex;
@@ -359,6 +415,9 @@ $donkey-brown: (
   &__lead {
     margin-top: $space-xs;
     line-height: 1.7em;
+    @media screen and (min-width: $breakpoint-tablet) {
+      font-size: 20px;
+    }
   }
 }
 
@@ -379,6 +438,32 @@ $donkey-brown: (
   white-space: normal;
 }
 
+.skill-list {
+  & > li {
+    @media screen and (min-width: $breakpoint-tablet) {
+      font-size: 20px;
+    }
+  }
+}
+
+.award-list {
+  & > li {
+    @media screen and (min-width: $breakpoint-tablet) {
+      font-size: 20px;
+    }
+  }
+}
+.trait-list {
+  & > li p, & > span {
+    font-size: 20px;
+  }
+}
+
+.project-list {
+  & > li a {
+    font-size: 20px;
+  }
+}
 .title--small {
   letter-spacing: 1px;
   line-height: 1.7rem;
@@ -533,4 +618,12 @@ a {
 
 .align-base-line {
   align-content: baseline;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1400px) {
+
 }
