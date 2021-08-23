@@ -82,8 +82,8 @@ h5, h6, h1, h2, h3, h4, p, ul {
   padding: 4px 15px 4px 15px;
 
   @media only screen and (min-width: 576px) and (max-width: 992px) {
-    padding-left: $space-xxl;
-    padding-right: $space-xxl;
+    padding-right: calc(2em + #{$space-xxl});
+    padding-left: calc(1em + #{$space-xxl});
   }
 }
 
@@ -351,8 +351,8 @@ $donkey-brown: (
   padding-right: $space-sm;
 
   @media only screen and (min-width: 576px) and (max-width: 992px) {
-    padding-right: $space-xxl;
-    padding-left: $space-xxl;
+    padding-right: calc(2em + #{$space-xxl});
+    padding-left: calc(1em + #{$space-xxl});
   }
 
   &__title {
@@ -381,7 +381,7 @@ $donkey-brown: (
   border: none;
 
   @media only screen and (min-width: 576px) and (max-width: 992px) {
-    margin-left: $space-xxl;
+    margin-left: calc(1em + #{$space-xxl});
   }
 }
 
