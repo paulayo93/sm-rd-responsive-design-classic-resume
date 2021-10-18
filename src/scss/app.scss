@@ -209,25 +209,27 @@ $donkey-brown: (
 
 // header secntion
 .header-container {
-  height: 37rem;
+  height: 49.88rem;
   @include angled-edges;
 }
 
   .profile {
     position: relative;
-    padding-top: 5rem;
     display: flex;
     justify-content: center;
   }
 
   .img--circle {
-    background-color: #4F4636;
-    opacity: 0.2;
-    border-radius: $border-radius;
-    -webkit-border-radius: $border-radius;
-    position: relative;
-    height: 10rem;
-    width: 10rem;
+    // background-color: #4F4636;
+    // opacity: 0.2;
+    // border-radius: $border-radius;
+    // -webkit-border-radius: $border-radius;
+    // border: 1px solid red;
+    margin-top: 50px;
+    // margin-left: 108px;
+    // margin-right: 77px;
+    // height: 10rem;
+    // width: 10rem;
   }
 
 //responsiveness for the header
@@ -247,37 +249,39 @@ $donkey-brown: (
 }
 
 %forward-slash:nth-child(1):after {
-  padding: 8px;
   content: "/\00a0";
+  margin-left: 5px;
 }
 .breadcrumb {
-  width: 100%;
-  position: relative;
+  font-size: 14px;
+  margin-top: 2.15em;
+  margin-left: 15px;
+  margin-right: 15px;
   display: flex;
   justify-content: center;
-  align-content: baseline;
-
+  // border: 1px solid red;
 
   &-list {
     list-style: none;
     display: flex;
-    justify-content: center;
-    align-content: baseline;
-    align-items: baseline;
     text-transform: uppercase;
     background-color: transparent;
-    width: 100%;
+    // border: 1px solid red;
 
     &--item {
-      @extend %forward-slash;
+      font-weight: 700;
+      font-size: 14px;
       color: map.get($donkey-brown, 500);
-      line-height: 1rem;
-      letter-spacing: .19999rem;
-      font-size: $font-size-xs;
+      line-height: 20px;
+      letter-spacing: .15em;
+      @extend %forward-slash;
+   
+
+      // border: 1px solid red;
+
       @media only screen and (min-width: 576px) and (max-width: 992px) {
         font-size: $font-size-sm;
       }
-
 
     }
   }
@@ -285,24 +289,29 @@ $donkey-brown: (
 
 
 @mixin title--lg {
+  // border: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  position: relative;
+  // text-align: center;
   line-height: .8846em;
   letter-spacing: -2.17px;
-  font-size: $font-size-lg;
+  font-size: 56px;
   @content;
   @media only screen and (min-width: 576px) and (max-width: 992px) {
     font-size: $font-size-xl;
   }
-
 }
 
 .title {
   position: relative;
   display: flex;
   justify-content: center;
+  margin-top: 14px;
+  // border: 1px solid red;
+  margin-left: 15px;
+  margin-right: 15px;
 
   &__item {
 
@@ -321,24 +330,26 @@ $donkey-brown: (
   display: flex;
   justify-content: center;
   align-content: baseline;
-  margin-top: $space-xl;
 
   &--btn {
-    display: inline-flex;
-    white-space: nowrap;
-    text-decoration: none;
-    text-align: center;
-    line-height: 1rem;
-    letter-spacing: .19999rem;
     text-transform: uppercase;
     color: $white;
     background-color: map.get($bondi-blue, 500);
-    position: relative;
-    top: -2rem;
-    border-radius: .0009rem;
     box-shadow: none;
     border: none;
-    padding: 1.455rem 4rem 1.6rem;
+    margin-top: 40px;
+    // border: 1px solid red;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: 17px;
+    padding-bottom: 19px;
+    height: 60px;
+    width: 225px;
+    letter-spacing: .17rem;
+    text-decoration: none;
+    text-align: center;
+    line-height: 2rem;
+    position: relative;
   }
 }
 
