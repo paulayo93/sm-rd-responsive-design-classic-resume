@@ -1,13 +1,13 @@
-@use 'sass:map';
+@use "sass:map";
 
 /* Core variables */
-@import 'base/vars';
+@import "base/vars";
 
 /* CSS Reset */
-@import 'base/reset';
+@import "base/reset";
 
 /* Fonts */
-@import 'base/fonts';
+@import "base/fonts";
 
 /* Mixins, helpers and functions */
 //@import 'base/mixins';
@@ -18,7 +18,6 @@ $font-size-md: 32px;
 $font-size-lg: 52px;
 $font-size-xl: 86px;
 $font-size-26: 26px;
-
 
 //S, XS, L, XL and — if necessary — XXS and XXL
 
@@ -34,17 +33,14 @@ $space-xxl: calc(5.25 * #{$space-unit});
 $border-radius: 60%;
 
 $breakpoint-tablet: 768px;
-
-@media (min-width: $breakpoint-tablet) {
-
-}
+$breakpoint-desktop: 992px;
 
 html {
   box-sizing: border-box;
   font-size: $font-size-sm;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 @media (max-width: 900px) {
@@ -65,7 +61,8 @@ html {
   }
 }
 
-body, * {
+body,
+* {
   font-family: PTSansNarrow, serif;
   font-weight: 400;
   font-size: $font-size-sm;
@@ -73,7 +70,14 @@ body, * {
   color: $black;
 }
 
-h5, h6, h1, h2, h3, h4, p, ul {
+h5,
+h6,
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
   margin: 0;
   padding: 0;
 }
@@ -104,40 +108,37 @@ h5, h6, h1, h2, h3, h4, p, ul {
   }
 }
 
-
-$color-primary: #0699A6 !default;
-$secondary-color: #9E8C6C !default;
+$color-primary: #0699a6 !default;
+$secondary-color: #9e8c6c !default;
 $black: #000 !default;
 $white: #fff !default;
 $text-color: $black;
 
-
 $bondi-blue: (
-        50: #000F10,
-        100: #011E21,
-        200: #023D42,
-        300: #035B63,
-        400: #047A84,
-        500: #0699a6,
-        600: #37ADB7,
-        700: #69C1C9,
-        800: #9BD6DB,
-        900: #CDEAED,
+  50: #000f10,
+  100: #011e21,
+  200: #023d42,
+  300: #035b63,
+  400: #047a84,
+  500: #0699a6,
+  600: #37adb7,
+  700: #69c1c9,
+  800: #9bd6db,
+  900: #cdeaed,
 );
 
 $donkey-brown: (
-        50: #4F4636,
-        100: #5E5440,
-        200: #6E624B,
-        300: #7E7056,
-        400: #8E7E61,
-        500: #9e8c6c,
-        600: #A7977A,
-        700: #B1A389,
-        800: #BBAE98,
-        900: #C4BAA6,
+  50: #4f4636,
+  100: #5e5440,
+  200: #6e624b,
+  300: #7e7056,
+  400: #8e7e61,
+  500: #9e8c6c,
+  600: #a7977a,
+  700: #b1a389,
+  800: #bbae98,
+  900: #c4baa6,
 );
-
 
 @mixin primary-color($number, $color) {
   .primary-color-#{$number} {
@@ -169,7 +170,6 @@ $donkey-brown: (
 @include accent-color(600, map.get($donkey-brown, 600));
 @include accent-color(900, map.get($donkey-brown, 900));
 
-
 .section--layout {
   position: relative;
   display: flex;
@@ -186,12 +186,33 @@ $donkey-brown: (
   }
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: $breakpoint-desktop) {
+  main {
+    flex-direction: row-reverse;
+  }
+  .section--one {
+    margin-left: 125px;
+    margin-right: 125px;
+    border: 1px solid red;
+  }
+
+  .section--two {
+//     width: 350px;
+    margin-left: 165px;
+    border: 1px solid red;
+  }
+}
 
 @mixin angled-edges {
   @content;
   &:after {
     background-color: rgba(158, 140, 108, 0.1);
-    content: '';
+    content: "";
     display: block;
     height: inherit;
     left: 0;
@@ -211,41 +232,32 @@ $donkey-brown: (
 .header-container {
   height: 49.88rem;
   @include angled-edges;
-}
+  display: flex;
+  flex-direction: column;
 
-  .profile {
-    position: relative;
-    display: flex;
+  @media (min-width: $breakpoint-desktop) {
+    flex-direction: row;
     justify-content: center;
   }
+}
 
-  .img--circle {
-    // background-color: #4F4636;
-    // opacity: 0.2;
-    // border-radius: $border-radius;
-    // -webkit-border-radius: $border-radius;
-    // border: 1px solid red;
-    margin-top: 50px;
-    // margin-left: 108px;
-    // margin-right: 77px;
-    // height: 10rem;
-    // width: 10rem;
-  }
+.profile {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
 
-//responsiveness for the header
-@media only screen and (min-width: 576px) and (max-width: 992px) {
-
-  .header-container {
-    height: 57rem;
-  }
-  .profile {
-    padding-top: 6rem;
-    padding-left: $space-md;
-  }
-  .img--circle {
-    height: 15rem;
-    width: 15rem;
-  }
+.img--circle {
+  // background-color: #4F4636;
+  // opacity: 0.2;
+  // border-radius: $border-radius;
+  // -webkit-border-radius: $border-radius;
+  // border: 1px solid red;
+  margin-top: 50px;
+  // margin-left: 108px;
+  // margin-right: 77px;
+  // height: 10rem;
+  // width: 10rem;
 }
 
 %forward-slash:nth-child(1):after {
@@ -273,20 +285,17 @@ $donkey-brown: (
       font-size: 14px;
       color: map.get($donkey-brown, 500);
       line-height: 20px;
-      letter-spacing: .15em;
+      letter-spacing: 0.15em;
       @extend %forward-slash;
-   
 
       // border: 1px solid red;
 
       @media only screen and (min-width: 576px) and (max-width: 992px) {
         font-size: $font-size-sm;
       }
-
     }
   }
 }
-
 
 @mixin title--lg {
   // border: 1px solid red;
@@ -295,12 +304,18 @@ $donkey-brown: (
   align-items: center;
   position: relative;
   // text-align: center;
-  line-height: .8846em;
+  line-height: 0.8846em;
   letter-spacing: -2.17px;
   font-size: 56px;
   @content;
   @media only screen and (min-width: 576px) and (max-width: 992px) {
+    font-size: 66px;
+  }
+
+  @media only screen and (min-width: 992px) {
     font-size: $font-size-xl;
+    line-height: 82px;
+    letter-spacing: -1.13793px;
   }
 }
 
@@ -314,7 +329,6 @@ $donkey-brown: (
   margin-right: 15px;
 
   &__item {
-
     @include title--lg {
       .word-break {
         padding: 1px 8px;
@@ -323,8 +337,6 @@ $donkey-brown: (
     }
   }
 }
-
-
 
 .action {
   display: flex;
@@ -345,12 +357,44 @@ $donkey-brown: (
     padding-bottom: 19px;
     height: 60px;
     width: 225px;
-    letter-spacing: .17rem;
+    letter-spacing: 0.17rem;
     text-decoration: none;
     text-align: center;
     line-height: 2rem;
     position: relative;
   }
+
+  @media only screen and (min-width: 576px) {
+    .header-container {
+      height: 57rem;
+    }
+
+    .profile {
+      // padding-top: 6rem;
+      padding-left: $space-md;
+    }
+    // .img--circle {
+    //   height: 15rem;
+    //   width: 15rem;
+    // }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .header-container {
+    border: 1px solid red;
+//     height: 747px;
+    padding-top: 180px;
+    margin-bottom:83px;
+  }
+  .profile {
+    // padding-top: 6rem;
+    padding-left: $space-md;
+  }
+  // .img--circle {
+  //   height: 15rem;
+  //   width: 15rem;
+  // }
 }
 
 .about {
@@ -384,7 +428,7 @@ $donkey-brown: (
 
 .divider {
   width: 4.333rem;
-  height: .57737rem;
+  height: 0.57737rem;
   background-color: map.get($bondi-blue, 500);
   position: relative;
   margin: $space-lg 0 0 15px;
@@ -396,13 +440,18 @@ $donkey-brown: (
   }
 }
 
+.hide--divider {
+  @media only screen and (min-width: $breakpoint-desktop) {
+    display: none;
+  }
+}
+
 .header {
   display: inline-block;
   font-size: $font-size-md;
   margin-top: $space-md;
   text-align: start;
 }
-
 
 .work {
   display: flex;
@@ -433,8 +482,8 @@ $donkey-brown: (
 }
 
 .sep {
-  height: .1555em;
-  width: .144em;
+  height: 0.1555em;
+  width: 0.144em;
   background-color: map.get($donkey-brown, 500);
   display: inline-flex;
   padding-left: $space-xs;
@@ -466,25 +515,23 @@ $donkey-brown: (
 }
 .trait-list {
   @media only screen and (min-width: 576px) and (max-width: 992px) {
-    & > li p, & > span {
+    & > li p,
+    & > span {
       font-size: 20px;
     }
   }
-
 }
 
 .project-list {
   @media only screen and (min-width: 576px) and (max-width: 992px) {
-    & > li p, & > span {
+    & > li p,
+    & > span {
       font-size: 20px;
     }
     & > li a {
       font-size: 20px;
     }
-
   }
-
-
 }
 .title--small {
   letter-spacing: 1px;
@@ -541,7 +588,6 @@ $donkey-brown: (
   margin-right: $space-xl;
 }
 
-
 .pad__top--xl {
   padding-top: $space-xl;
 }
@@ -581,7 +627,6 @@ a {
   text-decoration: none;
 }
 
-
 .footer {
   position: relative;
   height: 40rem;
@@ -598,6 +643,13 @@ a {
   @include title--lg;
 }
 
+%pipe:nth-child(1):after {
+  content: "\007C";
+  margin-left: 5px;
+  color: blue;
+  border: 3px solid red;
+}
+
 .contact {
   position: relative;
   display: flex;
@@ -606,12 +658,17 @@ a {
   li {
     display: flex;
     justify-content: center;
+    //      @extend %pipe;
   }
 
   li > a {
     font-size: $font-size-26;
   }
 
+  @media screen and (min-width: $breakpoint-desktop) {
+    flex-direction: row;
+    height: 547px;
+  }
 }
 
 .f-layout {
@@ -643,9 +700,4 @@ a {
 }
 
 @media only screen and (min-width: 576px) and (max-width: 768px) {
-
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1400px) {
-
 }
